@@ -23,7 +23,11 @@ async function listDB(client) {
     
     let databaseList = await client.db().admin().listDatabases();
 
-    console.log(databaseList);
+    console.log("Lista baz danych:" );
+
+    databaseList.databases.forEach(database => {
+        console.log("Nazwa: " + database.name + " , Rozmiar: " + database.sizeOnDisk)
+    })
 }
 
 
