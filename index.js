@@ -3,11 +3,19 @@ const mongoString = "mongodb+srv://sebaskiba11:1234@pierwszadbmongo.kywosci.mong
 
 const client = new MongoClient(mongoString);
 async function main() {
-await client.connect();
 
+try {
+    await client.connect();
 
+} catch(error) {
+    console.error(error);
+} finally {
+    
 
-await client.close();
+    
+    await client.close();
+}
+
 }
 
 
